@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/master-page}">
+<meta charset="UTF-8">
+<title>Customers</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <h1>Hello This is Admin Page</h1>
+    <table class="table table-hover">
+        <thead>
+        <tr class="table-active">
+            <th scope="col">User</th>
+            <th scope="col">Activity</th>
+            <th scope="col">Role</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <div th:each="staff, iterStat:${staffs}">
+            <tr style="background-color: #fdfdfd">
+                <!--                <th scope="row" th:text="${activity.user.getEmail()}">Dark</th>-->
+                <td th:text="${staff.getEmail()}"></td>
+
+                <td th:text="${staff.getFirstname()}"></td>
+                <td><a  th:href="@{/makestaff(id=(${staff.getId()}))}">Make staff</a> </td>
+
+
+            </tr>
+        </div>
+
+        </tbody>
+    </table>
+</th:block>
+</body>
+</html>
