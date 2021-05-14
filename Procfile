@@ -1,1 +1,1 @@
-web: java -Dspring.profiles.active=default -Dserver.port=$PORT -jar target/*.jar
+war:deploy target/flightticketbooking-0.0.1-SNAPSHOT.war
